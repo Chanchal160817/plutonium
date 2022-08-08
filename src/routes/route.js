@@ -9,12 +9,12 @@ router.get('/test-me', function (req, res) {
     res.send('My second ever api!')
 
 });
-
+// problem 1 :-
 router.get('/movies', function (req, res) {
     let movies = ['kgf', 'rrr', 'ddlj']
     res.send(movies)
 })
-
+// problem 2:-
 router.get('/movies/:index', function (req, res) {
     let movies = ['kgf', 'rrr', 'ddlj']
 
@@ -25,6 +25,7 @@ router.get('/movies/:index', function (req, res) {
     res.send(movies[value])
 })
 
+// problem 3:-
 // router.get('/movies/:i', function (req, res) {
 //     let movies = ['kgf', 'rrr', 'ddlj']
 
@@ -65,6 +66,8 @@ router.get('/movies/:i',function(req , res){
         }
     })
 
+    // problem 4 :-
+
 router.get('/films', function (req, res) {
     let films = [{
         'id': 1,
@@ -84,6 +87,8 @@ router.get('/films', function (req, res) {
 
 
 })
+
+// problem 5 :- 
 
 router.get('/films/:filmsid', function (req, res) {
     let films = [{
