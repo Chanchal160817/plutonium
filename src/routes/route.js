@@ -43,8 +43,8 @@ router.get('/give-me-students-data', function (req, res) {
 
 })
 
-router.get('/movies', function(req,res){
-    let movies = [RRR ,KGF , KGF Chapter 2 , Kota factory]
+router.get('/movies', function (req, res){
+    let students = ['KGF', 'RRR', 'KGF Chapter 2']
     res.send(movies)
 })
 module.exports = router;
