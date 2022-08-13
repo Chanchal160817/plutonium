@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema( {
+const userSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     mobile: {
@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema( {
         enum: ["male", "female", "LGBTQ"] //"falana" will give an error
     },
     age: Number,
-    // isIndian: Boolean,
+    isIndian: Boolean,
     // parentsInfo: {
     //     motherName: String,
     //     fatherName: String,
