@@ -8,28 +8,30 @@ const createBook = async function (req, res) {
     res.send({ msg: savedData })
 }
 
-const getBooksData = async function (req, res) {
+const   getBooksData = async function (req, res) {
 
     //  let allBooks= await BookModel.find( ).count() // COUNT
 
     //    let allBooks= await BookModel.find( { authorName : "Chetan Bhagat" , isPublished: true  } )// AND
     // let allBooks = await BookModel.find({ authorName: "Chetan Bhagat" })// AND
-    // let allBooks = await BookModel.find({ authorName: "Chetan Bhagat", sales: 10 })// AND
+    //    let allBooks = await BookModel.find({ authorName: "Chetan Bhagat", sales: 10 })// AND
 
     // let allBooks= await BookModel.find( { 
-    //     $or: [ {authorName : "Chetan Bhagat" } , { isPublished: true } , {  "year": 1991 }]
-    // } ).select( { bookName: 1, authorName: 1, _id: 0})n // SELECT keys that we want
+    //     $or: [ {authorName : "Chetan Bhagat" } , { isPublished: true } , { year : 1991}]
+    // } ).select({bookName :1 , authorName:1  } )    // .count()  // SELECT keys that we want
 
-    // let allBooks= await BookModel.find().sort( { sales: -1 }) // SORT
+    // let allBooks= await BookModel.find().sort( { sales: -1 })// SORT 
+    // let allBooks= await BookModel.find().sort( { sales: 1 }).limit(3)// SORT  // Getting assending order first 3 book for assending -1 and decending 1 
+    // let allBooks= await BookModel.find().limit(2) //limit  
 
-    // PAGINATION 
+    // PAGINATION   
     // let page= req.query.page
     // let allBooks= await BookModel.find().skip(3 * (page-1)).limit(3)
 
     // let allBooks= await BookModel.find().sort({ sales: -1 }).skip(3 * (page-1)).limit(3).select({ bookName: 1, authorName: 1, _id: 0} )
 
 
-    // let allBooks= await BookModel.find({ sales: { $eq:  137 }  }) 
+    //  let allBooks= await BookModel.find({ sales: { $eq:  137  }  }) 
     // let allBooks= await BookModel.find({ sales: { $ne:  137 }  }) 
     // let allBooks= await BookModel.find({ sales: { $gt:  50 }  }) 
     // let allBooks= await BookModel.find({ sales: { $lt:  50 }  }) 
@@ -41,7 +43,7 @@ const getBooksData = async function (req, res) {
 
     // let allBooks= await BookModel.find({     sales : { $nin: [ 17, 82, 137] }     }).select({ sales: 1, _id:0})
 
-    //  let allBooks= await BookModel.find({     $and: [{sales : {$gt: 20}} , [sales:  {$lt: 100}]]    })  //sales is between 20 and 100.... sales > 20 AND sales <100
+    //   let allBooks= await BookModel.find({     $and: [{sales : {$gt: 20}} , {sales:  {$lt: 100}}  ]    })  //sales is between 20 and 100.... sales > 20 AND sales <100
     //  let allBooks= await BookModel.find({     sales : {$gt: 20, $lt: 100}   })  //sales is between 20 and 100.... sales > 20 AND sales <100
 
 
