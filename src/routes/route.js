@@ -17,7 +17,7 @@ router.post("/createAuthor", authorController.createAuthor  )
 
  router.post("/createPublisher", publisherController.createPublisher )
 
-// router.get("/getBooksData", bookController.getBooksData)
+ router.get("/getBooksData", bookController.getBooksData)
 
  router.post("/getBooksWithAuthorId", bookController.getBooksWithAuthorId)
 

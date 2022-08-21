@@ -5,7 +5,7 @@ const authorSchema = new mongoose.Schema( {
     author_name: String,
     age:Number,
     address:String ,
-    rating : Number
+    rating : Number 
 
 
 }, { timestamps: true });
