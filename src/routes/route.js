@@ -7,61 +7,60 @@ router.get("/test-me", function (req, res) {
     res.send("My first ever api!")
 })
 
-router.post('/players', function (req, res) {
-    let players = [
+let person =[
     {
-        "name": "manish",
-        "dob": "1/1/1995",
-        "gender": "male",
-        "city": "jalandhar",
-        "sports": [
-            "swimming"
-        ]
+        name : "pk",
+        age :12,
+        votingStatus : false
     },
     {
-        "name": "gopal",
-        "dob": "1/09/1995",
-        "gender": "male",
-        "city": "delhi",
-        "sports": [
-            "soccer"
-        ]
+        name : "sk",
+        age :22,
+        votingStatus : true
     },
     {
-        "name": "lokesh",
-        "dob": "1/1/1990",
-        "gender": "male",
-        "city": "mumbai",
-        "sports": [
-            "soccer"
-        ]
+        name : "AA",
+        age :72,
+        votingStatus : false
     },
-    ]
+    {
+    name : "Sc",
+    age :5,
+    votingStatus : false
+    },
+    {
+    name : "HO",
+    age :42,
+    votingStatus : true
+    }]
      
-        
-        let newPlayer = req.body
-        let newPlayersName = newPlayer.name
-        let isNameRepeated = false
+    router.post('/voting' , function (req, res ) {
+        let VotingAge = req.query.age
+        let ElegiblePerson = []
+        for (let i=0; i<person.length; i++)
+        {
+            if(person[i].age>VotingAge){
+                person[i].votingStatus= true;
+                ElegiblePerson.push(person[i])
      
-        //let player = players.find(p => p.name == newPlayersName)
-     
-        for(let i = 0; i < players.length; i++) {
-            if(players[i].name == newPlayersName) {
-                isNameRepeated = true;
-                break;
             }
         }
+        res.send({persons: ElegiblePerson , status:true})
+    // inputAge = req.query.votingAge;
+    // person.map(per=>(per.age>inputAge)?per.votingStatus=true:per.votingStatus);
+    // let final=person.filter(pson=>{if(pson.votingStatus==true){return pson.name}});
+    // res.send({data:final});
      
-        //undefined is same as false/ a falsy value
-        if (isNameRepeated) {
-            //Player exists
-            res.send("This player was already added!")
-        } else {
-            //New entry
-            players.push(newPlayer)
-            res.send(players)
-        }
-    });
+    })
+    
+    
+    
+    
+    
+    
+    
+    
+    module.exports = router;
     
     
     
