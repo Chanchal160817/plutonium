@@ -4,12 +4,12 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 const bookSchema = new mongoose.Schema( {
     name: String,
     author_id: {
-        required : true,
+      
         type: ObjectId,
         ref: "Author"
     }, 
     publisher_id: {
-        required : true ,
+       
         type: ObjectId ,
         ref: "Publisher"
     }, 
