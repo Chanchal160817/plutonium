@@ -1,24 +1,27 @@
 const express = require('express');
 const router = express.Router();
 
-const authorController= require("../controllers/authorController")
-const bookController= require("../controllers/bookController")
-const publisherController = require("../controllers/publisherController")
+
 
 router.get("/test-me", function (req, res) {
     res.send("My first ever api!")
 })
 
-router.post("/createAuthor", authorController.createAuthor  )
+router.get("/sol1", function (req, res) {
 
-// router.get("/getAuthorsData", authorController.getAuthorsData)
 
- router.post("/createBook", bookController.createBook  )
+    let arr = [1, 2, 3, 5, 6, 7]
 
- router.post("/createPublisher", publisherController.createPublisher )
+    let total = 0;
+    for (var i in arr) {
+        total += arr[i];
+    }
 
- router.get("/getBooksData", bookController.getBooksData)
+    let lastDigit = arr.pop()
+    let consecutiveSum = lastDigit * (lastDigit + 1) / 2
+    let missingNumber = consecutiveSum - total
 
- router.put("/getBooksWithAuthorDetails", bookController.getBooksWithAuthorDetails)
+    res.send({ data: missingNumber });
+});
 
 module.exports = router;
