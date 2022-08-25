@@ -12,6 +12,10 @@ const basicCode= async function(req, res) {
     res.send({ msg: "This is coming from controller (handler)"})
     }
 
+    const cU = async function(req,res){
+        console.log('Date , Ip, route information ');
+        res.send({msg:"This is coming from controller (handler)"})
+    }
 
 
 
@@ -44,3 +48,4 @@ const getUsersData= async function (req, res) {
 module.exports.createUser= createUser
 module.exports.getUsersData= getUsersData
 module.exports.basicCode= basicCode
+module.exports.cU= cU
