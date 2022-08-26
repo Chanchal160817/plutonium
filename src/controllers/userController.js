@@ -12,7 +12,7 @@ const basicCode= async function(req, res, next) {
     //res.send({ msg: "This is coming from controller (handler)"})
     next()
     }
-
+  
 const createUser= async function (req, res) {
     
     let data= req.body
